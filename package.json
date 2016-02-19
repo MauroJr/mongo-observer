@@ -25,5 +25,9 @@
   "bugs": {
     "url": "https://github.com/MauroJr/mongo-observer/issues"
   },
-  "homepage": "https://github.com/MauroJr/mongo-observer#readme"
+  "homepage": "https://github.com/MauroJr/mongo-observer#readme",
+  "dependencies": {
+    "mongodb": "^2.1.7",
+    "tofactory": "^1.0.3"
+  }
 }
