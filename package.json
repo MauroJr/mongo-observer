@@ -1,0 +1,29 @@
+{
+  "name": "mongo-observer",
+  "version": "1.0.0",
+  "description": "observe changes in Mongodb and emit them through event emitter with event routes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MauroJr/mongo-observer.git"
+  },
+  "keywords": [
+    "mongo",
+    "mongodb",
+    "oplog",
+    "observer",
+    "event",
+    "events",
+    "emitter",
+    "router"
+  ],
+  "author": "Mauro Junior",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MauroJr/mongo-observer/issues"
+  },
+  "homepage": "https://github.com/MauroJr/mongo-observer#readme"
+}
