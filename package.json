@@ -1,8 +1,8 @@
 {
   "name": "mongo-observer",
   "version": "1.0.0",
-  "description": "observe changes in Mongodb and emit them through event emitter with event routes.",
-  "main": "index.js",
+  "description": "Observe changes in Mongodb and emit them through event emitter with event routes.",
+  "main": "./lib/mongo-observer.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -27,7 +27,8 @@
   },
   "homepage": "https://github.com/MauroJr/mongo-observer#readme",
   "dependencies": {
+    "create-emitter": "^1.0.0",
     "mongodb": "^2.1.7",
-    "tofactory": "^1.0.3"
+    "tofactory": "^1.1.0"
   }
 }
