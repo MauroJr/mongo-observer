@@ -2,7 +2,7 @@
   "name": "mongo-observer",
   "version": "1.0.1",
   "description": "Observe changes in Mongodb and emit them through event emitter with event routes.",
-  "main": "./lib/mongo-observer.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
