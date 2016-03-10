@@ -29,6 +29,6 @@
   "dependencies": {
     "create-emitter": "^1.0.0",
     "mongodb": "^2.1.7",
-    "tofactory": "^1.1.0"
+    "tofactory": "^1.1.1"
   }
 }
