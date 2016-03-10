@@ -11,21 +11,23 @@ npm install mongo-observer --save
 
 ```javascript
 'use strict';
-    
-const mongo = require('mongo-observer').create({
-	host: 'localhost',
-	port: 25252,
-	dbName: 'test',
-	collections: ['users', 'customers']
-});
+
+const MongoObserver = require('mongo-observer');
+
+const mongo = MongoObserver('mongodb://localhost:27017/mydb');
 
 mongo.on('*:*:*', function (collection, operation, _id, data) {
 	console.log('collection:', collection);
+	
 	console.log('operation:', operation);
+	
 	console.log('_id:', _id);
+	
 	console.log('data:', data);
 });
 
+
+mongo.observe()
 
 ```
 
