@@ -28,7 +28,12 @@
   "homepage": "https://github.com/MauroJr/mongo-observer#readme",
   "dependencies": {
     "create-emitter": "^1.0.0",
+    "debug": "^2.2.0",
     "mongodb": "^2.1.7",
     "tofactory": "^1.1.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
   }
 }
