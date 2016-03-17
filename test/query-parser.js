@@ -38,4 +38,20 @@ describe('Query Parser', function () {
         });
     });
     
+    describe('query with "$eq" operator', function () {
+        let query = QueryParser({age: {$eq: 18}});
+        
+        it('should return true on doc has equal field', function () {
+            let result = query.match({name: 'John Doe', age: 18});
+    
+            expect(result).to.be.true;
+        });
+        
+        it('should return false on doc has no equal field', function () {
+            let result = query.match({name: 'John Doe', age: 22});
+    
+            expect(result).to.be.false;
+        });
+    });
+    
 });
