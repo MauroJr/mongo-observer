@@ -86,4 +86,26 @@ describe('Query Parser', function () {
         });
     });
     
+    describe('query with "$gte" operator', function () {
+        let query = QueryParser({age: {$gte: 18}});
+        
+        it('should return true when doc has a higher value', function () {
+            let result = query.match({name: 'John Doe', age: 28});
+    
+            expect(result).to.be.true;
+        });
+        
+        it('should return false when doc has a lower value', function () {
+            let result = query.match({name: 'John Doe', age: 12});
+    
+            expect(result).to.be.false;
+        });
+        
+        it('should return true when doc has a equal value', function () {
+            let result = query.match({name: 'John Doe', age: 18});
+    
+            expect(result).to.be.true;
+        });
+    });
+    
 });
