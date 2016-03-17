@@ -54,6 +54,22 @@ describe('Query Parser', function () {
         });
     });
     
+    describe('query with "$ne" operator', function () {
+        let query = QueryParser({age: {$ne: 18}});
+        
+        it('should return true when doc has no equal value', function () {
+            let result = query.match({name: 'John Doe', age: 8});
+    
+            expect(result).to.be.true;
+        });
+        
+        it('should return false when doc has equal value', function () {
+            let result = query.match({name: 'John Doe', age: 18});
+    
+            expect(result).to.be.false;
+        });
+    });
+    
     describe('query with "$gt" operator', function () {
         let query = QueryParser({age: {$gt: 18}});
         
