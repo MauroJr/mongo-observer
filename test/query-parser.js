@@ -184,4 +184,42 @@ describe('Query Parser', function () {
         });
     });
 
+    describe('query with "$nin" operator', function () {
+        let query = QueryParser({age: {$nin: [18, 20, 30]}}),
+            docs = [
+                { id: 0, name: 'John Doe', age: 22 },
+                { id: 1, name: 'John Doe', age: 20 },
+                { id: 2, name: 'John Doe', age: 12 },
+                { id: 3, name: 'John Doe', age: 30 },
+                { id: 4, name: 'John Doe', age: 18 },
+                { id: 5, name: 'John Doe', age: 12 },
+                { id: 6, name: 'John Doe', age: 18 },
+                { id: 7, name: 'John Doe', age: 30 },
+                { id: 8, name: 'John Doe', age: 33 },
+                { id: 9, name: 'John Doe', age: 22 }
+            ];
+        
+        it('should return false when doc has one of the values', function () {
+            let result = query.match(docs[3]);
+    
+            expect(result).to.be.false;
+        });
+        
+        it('should return true when doc not have any of the values', function () {
+            let result = query.match(docs[0]);
+    
+            expect(result).to.be.true;
+        });
+        
+        it('should return only the docs which does not have none of the values', function () {
+            const results = [];
+            
+            docs.forEach(function (doc) {
+                if (query.match(doc)) results.push(doc);
+            });
+            
+            expect(results).to.have.length(5);
+        });
+    });
+
 });
