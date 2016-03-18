@@ -172,6 +172,16 @@ describe('Query Parser', function () {
     
             expect(result).to.be.false;
         });
+        
+        it('should return only the docs which does have one of the values', function () {
+            const results = [];
+            
+            docs.forEach(function (doc) {
+                if (query.match(doc)) results.push(doc);
+            });
+            
+            expect(results).to.have.length(5);
+        });
     });
 
 });
